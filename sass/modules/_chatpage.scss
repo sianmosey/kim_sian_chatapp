@@ -1,0 +1,97 @@
+#chatApp {
+    border: 2px solid aliceblue;
+    height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    .messages {
+        height: 80vh;
+        overflow: auto;
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0 auto;
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #F5F5F5;
+            border-radius: 10px;
+            background: transparent;
+            margin-top: 2rem;
+        }
+        &::-webkit-scrollbar {
+            // display: none;
+            width: 10px;
+            background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            margin-top: 2rem;
+            border-radius: 10px;
+            background: linear-gradient(0deg, rgba(46, 162, 163, 1) 0%, rgba(142, 45, 253, 1) 100%);
+        }
+        .message {
+            box-sizing: border-box;
+            background: rgb(46, 162, 163);
+            background: linear-gradient(0deg, rgba(46, 162, 163, 1) 0%, rgba(93, 105, 207, 1) 100%);
+            padding: 10px;
+            max-width: 60%;
+            border-radius: 1rem;
+            margin: 20px auto 20px 20px;
+            h4 {
+                text-transform: uppercase;
+                padding-bottom: 10px;
+                text-align: left;
+            }
+            .messageSent {
+                text-align: center;
+                margin-left: auto;
+                overflow-wrap: break-word;
+                line-height: 25px;
+                padding-bottom: 10px;
+            }
+            &.myMessage {
+                background: rgb(91, 107, 205);
+                background: linear-gradient(0deg, rgba(91, 107, 205, 1) 0%, rgba(142, 45, 253, 1) 100%);
+                margin: 20px 20px 20px auto;
+                h4 {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .messageWrap {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+        .text-message {
+            box-sizing: border-box;
+            padding: 10px;
+            resize: none;
+            width: 75%;
+            height: 100px;
+            border-radius: 1rem 0 0 1rem;
+            font-family: $default-family;
+        }
+        .button {
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 1rem;
+            width: 90px;
+            border: none;
+            border-radius: 0 1rem 1rem 0;
+            font-family: $default-family;
+            color: $main-text;
+            background: linear-gradient(180deg, #452286 0%, #1E2434 100%) 0% 0% no-repeat padding-box;
+            .fas {
+                font-size: 1rem;
+                color: $main-text;
+            }
+            &:hover {
+                background: linear-gradient(180deg, #1E2434 0%, #452286 100%) 0% 0% no-repeat padding-box;
+            }
+        }
+    }
+}

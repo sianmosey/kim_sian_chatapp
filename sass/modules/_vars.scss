@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Glasoor;
+    src: url(/fonts/Glasoor.otf);
+}
+
+$main-background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(142, 45, 253, 1) 100%);
+$main-text: white;
+$default-family: Montserrat,
+Arial,
+Helvetica,
+sans-serif;
+$title-font: Glasoor;
+$default-size: 1rem; //quick reset

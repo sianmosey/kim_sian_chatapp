@@ -1,0 +1,13 @@
+body {
+    background: #1E2434;
+    color: $main-text;
+    font-family: $default-family;
+    font-size: 16px;
+    .hidden {
+        display: none;
+    }
+}
+
+:focus {
+    outline: none;
+}
