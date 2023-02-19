@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0f3adee742.js" crossorigin="anonymous"></script>
+    <title>ChatApp</title>
+</head>
+
+<body>
+    <main id="app">
+        <h1 class="hidden">Chat App</h1>
+
+        <div id="chatApp" v-if="joined">
+            <section class="messages" ref="messages">
+                <div class="message" v-for="message in messages" :key="message.message.id" :class="{ myMessage: socket_ID === message.id }">
+                    <newmessage :message="message"></newmessage>
+                </div>
+            </section>
+
+            <section class="messageWrap">
+                <h2 class="hidden">Message Section</h2>
+
+                <textarea v-model="message" class="text-message" placeholder="write a message"></textarea>
+
+                <button class="button" @click.prevent="dispatchMessage" type="submit"><i class="fas fa-paper-plane"></i></button>
+
+            </section>
+        </div>
+
+        <div id="loginWrap" v-else>
+            <header class="title">ChatApp</header>
+            <section class="login">
+                <h2 class="element">Name</h2>
+                <input class="input element" v-model="nickname" type="text">
+                <button @click="joinChat" class="button element">Join the Chat!</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer type="module" src="/scripts/main.js"></script>
+
+</body>
+
+</html>
